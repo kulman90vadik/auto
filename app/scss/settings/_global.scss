@@ -33,8 +33,11 @@ body {
     max-width: 1270px;
     padding: 0 15px;
     margin: 0 auto;
-    @include max($sm) {
-        padding: 0 10px;
+    @include max($md) {
+        padding: 0 39px;
+    }
+    @include max($s) {
+        padding: 0 15px;
     }
 }
 

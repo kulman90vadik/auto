@@ -1,6 +1,15 @@
 .home {
     padding: 109px 0 173px;
     position: relative;
+    @include max($md) {
+        padding: 80px 0 0;
+        margin-bottom: 42px;
+    }
+    @include max($s) {
+        padding: 75px 0 181px;
+        background-color: $green;
+        margin-bottom: 0;
+    }
     &::after {
         position: absolute;
         content: '';
@@ -10,43 +19,96 @@
         width: 45%;
         z-index: -1;
         background-color: $green;
+        @include max($md) {
+            width: 23%;
+        }
+        @include max($s) {
+            display: none;
+        }
     }
+
     &__inner {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        @include max($md) {
+            flex-direction: column;
+        }
     }
+
     &__content {
+        padding-top: 82px;
         max-width: 600px;
         width: 100%;
         margin-right: 10px;
+        @include max($md) {
+            margin-bottom: 60px;
+            margin-right: 0;
+            padding-top: 0;
+        }
+        @include max($s) {
+            margin-bottom: 45px;
+        }
     }
+
     &__title {
         color: $black;
         font-weight: 600;
         font-family: $Exo2;
         font-size: 52px;
         line-height: 1.25;
-        margin-bottom: 40px;
+        margin-bottom: 28px;
         @include lineClamp;
         -webkit-line-clamp: 2;
+        @include max($md) {
+            font-size: 44px;
+            margin-bottom: 30px;
+        }
+        @include max($s) {
+            font-size: 28px;
+            color: #fff;
+            margin-bottom: 27px;
+        }
     }
+
     &__text {
-        margin-bottom: 40px;
-        max-width: 525px;
+        margin-bottom: 34px;
+        max-width: 530px;
         width: 100%;
+        @include max($md) {
+            margin-bottom: 53px;
+        }
+        @include max($s) {
+            max-width: 100%;
+            font-size: 15px;
+            margin-bottom: 23px;
+            color: #fff;
+        }
         p {
             @include lineClamp;
             -webkit-line-clamp: 4;
+            @include max($s) {
+                display: inline;
+            }
+            &:nth-last-of-type(1) {
+                @include max($s) {
+                    display: none;
+                }
+            }
         }
     }
+
     &__link {
-        position: absolute;
+        position: relative;
         font-weight: 700;
         outline: transparent;
         color: $black;
         padding-bottom: 5px;
         transition: color 0.3s ease-in;
+        @include max($s) {
+            color: #fff;
+            font-size: 15px;
+            padding-bottom: 7px;
+        }
         &::after {
             position: absolute;
             content: '';
@@ -61,9 +123,9 @@
             color: $yellow;
         }
         &:focus {
-            color: $green;
+            color: $black;
             &::after {
-                background-color: $green;
+                background-color: $black;
             }
         }
         &:active {
@@ -73,11 +135,19 @@
             }
         }
     }
+    
     &__bg {
         max-width: 635px;
         width: 100%;
         height: 505px;
         @include bg;
         border-radius: 20px;
+        @include max($md) {
+            max-width: 100%;
+            height: 314px;
+        }
+        @include max($s) {
+            height: 253px;
+        }
     }
 }

@@ -1,0 +1,71 @@
+.service {
+    margin-top: -106px;
+    &__list {
+        border-radius: 20px;
+        background-color: #fff;
+        display: grid;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        grid-template-columns: repeat(3, 1fr);
+        padding: 40px 16px;
+    }
+    &__item {
+        padding: 0 84px 0 64px;
+        &:not(:last-child) {
+            border-right: 1px solid #d7d7dd;
+        }
+    }
+    &__decor {
+        position: relative;
+        width: 92px;
+        height: 92px;
+        border-radius: 50%;
+        background-color: $grey;
+        margin-bottom: 24px;
+        &::after {
+            position: absolute;
+            content: '';
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            @include bg;
+        }
+        &--search {
+            &::after {
+                background-image: url(../images/search.svg);
+                width: 50px;
+                height: 50px;
+            }
+        }
+        &--search-product {
+            &::after {
+                background-image: url(../images/search-product.svg);
+                width: 47px;
+                height: 50px;
+            }
+        }
+        &--delivery {
+            &::after {
+                background-image: url(../images/delivery.svg);
+                width: 66px;
+                height: 39px;
+            }
+        }
+    }
+    &__name {
+        display: block;
+        font-weight: 600;
+        font-size: 20px;
+        color: $black;
+        font-family: $Exo2;
+        margin-bottom: 15px;
+        line-height: 1.35;
+        @include lineClamp;
+        -webkit-line-clamp: 2;
+    }
+    &__text {
+        p {
+            @include lineClamp;
+            -webkit-line-clamp: 4;
+        }
+    }
+}

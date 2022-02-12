@@ -1,0 +1,83 @@
+.home {
+    padding: 109px 0 173px;
+    position: relative;
+    &::after {
+        position: absolute;
+        content: '';
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 45%;
+        z-index: -1;
+        background-color: $green;
+    }
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__content {
+        max-width: 600px;
+        width: 100%;
+        margin-right: 10px;
+    }
+    &__title {
+        color: $black;
+        font-weight: 600;
+        font-family: $Exo2;
+        font-size: 52px;
+        line-height: 1.25;
+        margin-bottom: 40px;
+        @include lineClamp;
+        -webkit-line-clamp: 2;
+    }
+    &__text {
+        margin-bottom: 40px;
+        max-width: 525px;
+        width: 100%;
+        p {
+            @include lineClamp;
+            -webkit-line-clamp: 4;
+        }
+    }
+    &__link {
+        position: absolute;
+        font-weight: 700;
+        outline: transparent;
+        color: $black;
+        padding-bottom: 5px;
+        transition: color 0.3s ease-in;
+        &::after {
+            position: absolute;
+            content: '';
+            bottom: 0;
+            left: 0;
+            background-color: $yellow;
+            height: 3px;
+            width: 100%;
+            transition: background-color 0.3s ease-in;
+        }
+        &:hover {
+            color: $yellow;
+        }
+        &:focus {
+            color: $green;
+            &::after {
+                background-color: $green;
+            }
+        }
+        &:active {
+            color: $global;
+            &::after {
+                background-color: $global;
+            }
+        }
+    }
+    &__bg {
+        max-width: 635px;
+        width: 100%;
+        height: 505px;
+        @include bg;
+        border-radius: 20px;
+    }
+}
